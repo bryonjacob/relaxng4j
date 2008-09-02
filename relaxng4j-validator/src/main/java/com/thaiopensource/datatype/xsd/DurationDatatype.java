@@ -96,7 +96,7 @@ class DurationDatatype extends RegexDatatype implements OrderRelation {
     }
   }
 
-  Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
+  Object getValue(String str, com.relaxng4j.datatype.ValidationContext vc) {
     int t = str.indexOf('T');
     if (t < 0)
       t = str.length();

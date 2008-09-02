@@ -10,9 +10,9 @@ public interface PatternVisitor {
   void visitOneOrMore(Pattern p);
   void visitElement(NameClass nc, Pattern content);
   void visitAttribute(NameClass ns, Pattern value);
-  void visitData(com.googlecode.relaxng4j.datatype.Datatype dt);
-  void visitDataExcept(com.googlecode.relaxng4j.datatype.Datatype dt, Pattern except);
-  void visitValue(com.googlecode.relaxng4j.datatype.Datatype dt, Object obj);
+  void visitData(com.relaxng4j.datatype.Datatype dt);
+  void visitDataExcept(com.relaxng4j.datatype.Datatype dt, Pattern except);
+  void visitValue(com.relaxng4j.datatype.Datatype dt, Object obj);
   void visitText();
   void visitList(Pattern p);
 }

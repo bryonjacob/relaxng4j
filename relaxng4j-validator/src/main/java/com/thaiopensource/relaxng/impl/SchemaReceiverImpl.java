@@ -28,9 +28,9 @@ public class SchemaReceiverImpl implements SchemaReceiver {
   public SchemaFuture installHandlers(XMLReader xr) throws SAXException {
     final SchemaPatternBuilder pb = new SchemaPatternBuilder();
     ErrorHandler eh = ValidateProperty.ERROR_HANDLER.get(properties);
-    com.googlecode.relaxng4j.datatype.DatatypeLibraryFactory dlf = RngProperty.DATATYPE_LIBRARY_FACTORY.get(properties);
+    com.relaxng4j.datatype.DatatypeLibraryFactory dlf = RngProperty.DATATYPE_LIBRARY_FACTORY.get(properties);
     if (dlf == null)
-      dlf = new com.googlecode.relaxng4j.datatype.helpers.DatatypeLibraryLoader();
+      dlf = new com.relaxng4j.datatype.helpers.DatatypeLibraryLoader();
     final PatternFuture pf = SchemaBuilderImpl.installHandlers(parser, xr, eh, dlf, pb);
     return new SchemaFuture() {
       public Schema getSchema() throws IncorrectSchemaException, SAXException, IOException {

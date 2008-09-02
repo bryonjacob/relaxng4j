@@ -17,7 +17,7 @@ class TokenDatatype extends DatatypeBase implements Measure {
     return true;
   }
 
-  Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
+  Object getValue(String str, com.relaxng4j.datatype.ValidationContext vc) {
     return str;
   }
 

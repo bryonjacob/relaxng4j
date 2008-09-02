@@ -1,4 +1,4 @@
-package com.googlecode.relaxng4j.datatype;
+package com.relaxng4j.datatype;
 
 /**
  * Creates a user-defined type by adding parameters to
@@ -22,24 +22,24 @@ public interface DatatypeBuilder {
 	 *		acquire additional information. This context object is
 	 *		valid only during this method call. The callee may not
 	 *		keep a reference to this object.
-	 * @exception com.googlecode.relaxng4j.datatype.DatatypeException
+	 * @exception com.relaxng4j.datatype.DatatypeException
 	 *		When the given parameter is inappropriate for some reason.
 	 *		The callee is responsible to recover from this error.
 	 *		That is, the object should behave as if no such error
 	 *		was occured.
 	 */
 	void addParameter( String name, String strValue, ValidationContext context )
-		throws com.googlecode.relaxng4j.datatype.DatatypeException;
+		throws com.relaxng4j.datatype.DatatypeException;
 	
 	/**
 	 * Derives a new Datatype from a Datatype by parameters that
 	 * were already set through the addParameter method.
 	 * 
-	 * @exception com.googlecode.relaxng4j.datatype.DatatypeException
+	 * @exception com.relaxng4j.datatype.DatatypeException
 	 *		DatatypeException must be thrown if the derivation is
 	 *		somehow invalid. For example, a required parameter is missing,
 	 *		etc. The exception should contain a diagnosis message
 	 *		if possible.
 	 */
-	com.googlecode.relaxng4j.datatype.Datatype createDatatype() throws com.googlecode.relaxng4j.datatype.DatatypeException;
+	com.relaxng4j.datatype.Datatype createDatatype() throws com.relaxng4j.datatype.DatatypeException;
 }

@@ -1,6 +1,6 @@
 package com.thaiopensource.relaxng.impl;
 
-import com.googlecode.relaxng4j.datatype.ValidationContext;
+import com.relaxng4j.datatype.ValidationContext;
 
 import java.util.Hashtable;
 

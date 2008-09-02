@@ -18,7 +18,7 @@ import java.io.IOException;
 
 public class VerifierFactoryImpl extends VerifierFactory {
   private final XMLReaderCreator xrc = new Jaxp11XMLReaderCreator();
-  private final com.googlecode.relaxng4j.datatype.DatatypeLibraryFactory dlf = new com.googlecode.relaxng4j.datatype.helpers.DatatypeLibraryLoader();
+  private final com.relaxng4j.datatype.DatatypeLibraryFactory dlf = new com.relaxng4j.datatype.helpers.DatatypeLibraryLoader();
   private final ErrorHandler eh = new DraconianErrorHandler();
 
   public VerifierFactoryImpl() { }

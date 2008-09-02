@@ -1,10 +1,10 @@
 package com.thaiopensource.relaxng.impl;
 
-import com.googlecode.relaxng4j.datatype.Datatype;
+import com.relaxng4j.datatype.Datatype;
 
 class DatatypeValue {
   private final Object value;
-  private final com.googlecode.relaxng4j.datatype.Datatype dt;
+  private final com.relaxng4j.datatype.Datatype dt;
 
   DatatypeValue(Object value, Datatype dt) {
     this.value = value;

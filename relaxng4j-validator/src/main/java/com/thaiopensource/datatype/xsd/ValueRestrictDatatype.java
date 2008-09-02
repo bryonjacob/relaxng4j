@@ -1,6 +1,6 @@
 package com.thaiopensource.datatype.xsd;
 
-import com.googlecode.relaxng4j.datatype.ValidationContext;
+import com.relaxng4j.datatype.ValidationContext;
 
 abstract class ValueRestrictDatatype extends RestrictDatatype {
   ValueRestrictDatatype(DatatypeBase base) {
@@ -11,7 +11,7 @@ abstract class ValueRestrictDatatype extends RestrictDatatype {
     return getValue(str, vc) != null;
   }
 
-  Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
+  Object getValue(String str, com.relaxng4j.datatype.ValidationContext vc) {
     Object obj = base.getValue(str, vc);
     if (obj == null || !satisfiesRestriction(obj))
       return null;

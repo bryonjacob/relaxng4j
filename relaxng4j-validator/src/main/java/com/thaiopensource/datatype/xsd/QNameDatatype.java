@@ -25,7 +25,7 @@ class QNameDatatype extends DatatypeBase {
     }
   }
 
-  Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
+  Object getValue(String str, com.relaxng4j.datatype.ValidationContext vc) {
     int i = str.indexOf(':');
     if (i < 0) {
       String ns = vc.resolveNamespacePrefix("");
@@ -42,7 +42,7 @@ class QNameDatatype extends DatatypeBase {
     }
   }
 
-  boolean allowsValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
+  boolean allowsValue(String str, com.relaxng4j.datatype.ValidationContext vc) {
     int i = str.indexOf(':');
     return i < 0 || vc.resolveNamespacePrefix(str.substring(0, i)) != null;
   }

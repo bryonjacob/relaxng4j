@@ -16,7 +16,7 @@ class HexBinaryDatatype extends BinaryDatatype {
     return i == len;
   }
 
-  Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
+  Object getValue(String str, com.relaxng4j.datatype.ValidationContext vc) {
     int len = str.length();
     int start = 0;
     while (start < len && weight(str.charAt(start)) == WHITESPACE)

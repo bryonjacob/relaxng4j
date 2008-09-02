@@ -10,7 +10,7 @@ import com.thaiopensource.validate.Schema;
 import com.thaiopensource.validate.ValidateProperty;
 import com.thaiopensource.validate.rng.CompactSchemaReader;
 import com.thaiopensource.validate.rng.RngProperty;
-import com.googlecode.relaxng4j.datatype.DatatypeLibraryFactory;
+import com.relaxng4j.datatype.DatatypeLibraryFactory;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -146,7 +146,7 @@ public class SchemaFactory {
    * @see #setDatatypeLibraryFactory
    */
   public DatatypeLibraryFactory getDatatypeLibraryFactory() {
-    return (com.googlecode.relaxng4j.datatype.DatatypeLibraryFactory)properties.get(RngProperty.DATATYPE_LIBRARY_FACTORY);
+    return (com.relaxng4j.datatype.DatatypeLibraryFactory)properties.get(RngProperty.DATATYPE_LIBRARY_FACTORY);
   }
 
   /**

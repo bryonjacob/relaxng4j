@@ -26,12 +26,12 @@ import com.thaiopensource.validate.IncorrectSchemaException;
 import com.thaiopensource.util.Localizer;
 import com.thaiopensource.xml.util.Name;
 
-import com.googlecode.relaxng4j.datatype.Datatype;
-import com.googlecode.relaxng4j.datatype.DatatypeException;
-import com.googlecode.relaxng4j.datatype.DatatypeLibrary;
-import com.googlecode.relaxng4j.datatype.DatatypeLibraryFactory;
-import com.googlecode.relaxng4j.datatype.ValidationContext;
-import com.googlecode.relaxng4j.datatype.DatatypeBuilder;
+import com.relaxng4j.datatype.Datatype;
+import com.relaxng4j.datatype.DatatypeException;
+import com.relaxng4j.datatype.DatatypeLibrary;
+import com.relaxng4j.datatype.DatatypeLibraryFactory;
+import com.relaxng4j.datatype.ValidationContext;
+import com.relaxng4j.datatype.DatatypeBuilder;
 
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.Locator;
@@ -67,7 +67,7 @@ public class SchemaBuilderImpl implements SchemaBuilder, ElementAnnotationBuilde
 
   static public Pattern parse(Parseable parseable,
                               ErrorHandler eh,
-                              com.googlecode.relaxng4j.datatype.DatatypeLibraryFactory datatypeLibraryFactory,
+                              com.relaxng4j.datatype.DatatypeLibraryFactory datatypeLibraryFactory,
                               SchemaPatternBuilder pb,
                               boolean isAttributesPattern)
           throws IncorrectSchemaException, IOException, SAXException {
@@ -327,8 +327,8 @@ public class SchemaBuilderImpl implements SchemaBuilder, ElementAnnotationBuilde
   }
 
   private class DataPatternBuilderImpl implements DataPatternBuilder {
-    private final com.googlecode.relaxng4j.datatype.DatatypeBuilder dtb;
-    DataPatternBuilderImpl(com.googlecode.relaxng4j.datatype.DatatypeBuilder dtb) {
+    private final com.relaxng4j.datatype.DatatypeBuilder dtb;
+    DataPatternBuilderImpl(com.relaxng4j.datatype.DatatypeBuilder dtb) {
       this.dtb = dtb;
     }
 
@@ -341,7 +341,7 @@ public class SchemaBuilderImpl implements SchemaBuilder, ElementAnnotationBuilde
 	String detail = e.getMessage();
         int pos = e.getIndex();
         String displayedParam;
-        if (pos == com.googlecode.relaxng4j.datatype.DatatypeException.UNKNOWN)
+        if (pos == com.relaxng4j.datatype.DatatypeException.UNKNOWN)
           displayedParam = null;
         else
           displayedParam = displayParam(value, pos);
@@ -375,7 +375,7 @@ public class SchemaBuilderImpl implements SchemaBuilder, ElementAnnotationBuilde
       try {
         return pb.makeData(dtb.createDatatype());
       }
-      catch (com.googlecode.relaxng4j.datatype.DatatypeException e) {
+      catch (com.relaxng4j.datatype.DatatypeException e) {
 	String detail = e.getMessage();
 	if (detail != null)
 	  error("invalid_params_detail", detail, (Locator)loc);
@@ -390,7 +390,7 @@ public class SchemaBuilderImpl implements SchemaBuilder, ElementAnnotationBuilde
       try {
         return pb.makeDataExcept(dtb.createDatatype(), (Pattern)except, (Locator)loc);
       }
-      catch (com.googlecode.relaxng4j.datatype.DatatypeException e) {
+      catch (com.relaxng4j.datatype.DatatypeException e) {
 	String detail = e.getMessage();
 	if (detail != null)
 	  error("invalid_params_detail", detail, (Locator)loc);
@@ -410,7 +410,7 @@ public class SchemaBuilderImpl implements SchemaBuilder, ElementAnnotationBuilde
       try {
         return new DataPatternBuilderImpl(dl.createDatatypeBuilder(type));
       }
-      catch (com.googlecode.relaxng4j.datatype.DatatypeException e) {
+      catch (com.relaxng4j.datatype.DatatypeException e) {
 	String detail = e.getMessage();
 	if (detail != null)
 	  error("unsupported_datatype_detail", datatypeLibrary, type, detail, (Locator)loc);
@@ -423,7 +423,7 @@ public class SchemaBuilderImpl implements SchemaBuilder, ElementAnnotationBuilde
 
   public ParsedPattern makeValue(String datatypeLibrary, String type, String value, Context context, String ns,
                                  Location loc, Annotations anno) throws BuildException {
-    com.googlecode.relaxng4j.datatype.DatatypeLibrary dl = datatypeLibraryFactory.createDatatypeLibrary(datatypeLibrary);
+    com.relaxng4j.datatype.DatatypeLibrary dl = datatypeLibraryFactory.createDatatypeLibrary(datatypeLibrary);
     if (dl == null)
       error("unrecognized_datatype_library", datatypeLibrary, (Locator)loc);
     else {
@@ -436,7 +436,7 @@ public class SchemaBuilderImpl implements SchemaBuilder, ElementAnnotationBuilde
             return pb.makeValue(dt, obj);
           error("invalid_value", value, (Locator)loc);
         }
-        catch (com.googlecode.relaxng4j.datatype.DatatypeException e) {
+        catch (com.relaxng4j.datatype.DatatypeException e) {
           String detail = e.getMessage();
           if (detail != null)
             error("datatype_requires_param_detail", detail, (Locator)loc);
@@ -444,7 +444,7 @@ public class SchemaBuilderImpl implements SchemaBuilder, ElementAnnotationBuilde
             error("datatype_requires_param", (Locator)loc);
         }
       }
-      catch (com.googlecode.relaxng4j.datatype.DatatypeException e) {
+      catch (com.relaxng4j.datatype.DatatypeException e) {
         error("unrecognized_datatype", datatypeLibrary, type, (Locator)loc);
       }
     }
