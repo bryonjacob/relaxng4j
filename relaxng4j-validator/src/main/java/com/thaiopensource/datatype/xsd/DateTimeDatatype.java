@@ -1,6 +1,6 @@
 package com.thaiopensource.datatype.xsd;
 
-import org.relaxng.datatype.ValidationContext;
+import com.googlecode.relaxng4j.datatype.ValidationContext;
 
 import java.util.Calendar;
 import java.util.Date;

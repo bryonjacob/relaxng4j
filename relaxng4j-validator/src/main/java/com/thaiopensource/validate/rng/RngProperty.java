@@ -7,7 +7,7 @@ import com.thaiopensource.validate.FlagPropertyId;
 import com.thaiopensource.validate.Option;
 import com.thaiopensource.validate.FlagOption;
 import com.thaiopensource.validate.SchemaReader;
-import org.relaxng.datatype.DatatypeLibraryFactory;
+import com.googlecode.relaxng4j.datatype.DatatypeLibraryFactory;
 
 public class RngProperty {
 
@@ -22,7 +22,7 @@ public class RngProperty {
       return (DatatypeLibraryFactory)properties.get(this);
     }
 
-    public DatatypeLibraryFactory put(PropertyMapBuilder builder, DatatypeLibraryFactory value) {
+    public DatatypeLibraryFactory put(PropertyMapBuilder builder, com.googlecode.relaxng4j.datatype.DatatypeLibraryFactory value) {
       return (DatatypeLibraryFactory)builder.put(this, value);
     }
   }

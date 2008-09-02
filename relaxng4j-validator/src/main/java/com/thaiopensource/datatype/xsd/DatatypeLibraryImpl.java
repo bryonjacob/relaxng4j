@@ -7,12 +7,10 @@ import com.thaiopensource.util.Service;
 import com.thaiopensource.datatype.xsd.regex.RegexEngine;
 import com.thaiopensource.datatype.xsd.regex.RegexSyntaxException;
 
-import org.relaxng.datatype.DatatypeLibrary;
-import org.relaxng.datatype.Datatype;
-import org.relaxng.datatype.DatatypeException;
-import org.relaxng.datatype.DatatypeBuilder;
+import com.googlecode.relaxng4j.datatype.Datatype;
+import com.googlecode.relaxng4j.datatype.DatatypeException;
 
-public class DatatypeLibraryImpl implements DatatypeLibrary {
+public class DatatypeLibraryImpl implements com.googlecode.relaxng4j.datatype.DatatypeLibrary {
   private final Hashtable typeTable = new Hashtable();
   private final RegexEngine regexEngine;
 
@@ -97,7 +95,7 @@ public class DatatypeLibraryImpl implements DatatypeLibrary {
     typeTable.put("duration", new DurationDatatype());
   }
 
-  public DatatypeBuilder createDatatypeBuilder(String localName) throws DatatypeException {
+  public com.googlecode.relaxng4j.datatype.DatatypeBuilder createDatatypeBuilder(String localName) throws com.googlecode.relaxng4j.datatype.DatatypeException {
     DatatypeBase base = (DatatypeBase)typeTable.get(localName);
     if (base == null)
       throw new DatatypeException();
@@ -112,7 +110,7 @@ public class DatatypeLibraryImpl implements DatatypeLibrary {
     return new DatatypeBuilderImpl(this, base);
   }
 
-  RegexEngine getRegexEngine() throws DatatypeException {
+  RegexEngine getRegexEngine() throws com.googlecode.relaxng4j.datatype.DatatypeException {
     if (regexEngine == null)
       throw new DatatypeException(DatatypeBuilderImpl.localizer.message("regex_impl_not_found"));
     return regexEngine;
@@ -137,7 +135,7 @@ public class DatatypeLibraryImpl implements DatatypeLibrary {
     return (RegexEngine)e.nextElement();
   }
 
-  public Datatype createDatatype(String type) throws DatatypeException {
+  public Datatype createDatatype(String type) throws com.googlecode.relaxng4j.datatype.DatatypeException {
     return createDatatypeBuilder(type).createDatatype();
   }
 

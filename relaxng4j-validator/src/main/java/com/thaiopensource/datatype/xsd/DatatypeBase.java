@@ -1,10 +1,7 @@
 package com.thaiopensource.datatype.xsd;
 
-import org.relaxng.datatype.Datatype;
-import org.relaxng.datatype.DatatypeException;
-import org.relaxng.datatype.ValidationContext;
-import org.relaxng.datatype.DatatypeStreamingValidator;
-import org.relaxng.datatype.helpers.StreamingValidatorImpl;
+import com.googlecode.relaxng4j.datatype.DatatypeException;
+import com.googlecode.relaxng4j.datatype.helpers.StreamingValidatorImpl;
 import com.thaiopensource.datatype.Datatype2;
 
 abstract class DatatypeBase implements Datatype2 {
@@ -27,17 +24,17 @@ abstract class DatatypeBase implements Datatype2 {
     return whiteSpace;
   }
 
-  public boolean isValid(String str, ValidationContext vc) {
+  public boolean isValid(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
     str = normalizeWhiteSpace(str);
     return lexicallyAllows(str) && allowsValue(str, vc);
   }
 
-  public void checkValid(String str, ValidationContext vc) throws DatatypeException {
+  public void checkValid(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) throws DatatypeException {
     if (!isValid(str, vc))
-      throw new DatatypeException();
+      throw new com.googlecode.relaxng4j.datatype.DatatypeException();
   }
 
-  public Object createValue(String str, ValidationContext vc) {
+  public Object createValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
     str = normalizeWhiteSpace(str);
     if (!lexicallyAllows(str))
       return null;
@@ -56,13 +53,13 @@ abstract class DatatypeBase implements Datatype2 {
     
   /* Requires lexicallyAllows to be true.  Must return same value as
      getValue(str, vc) != null. */
-  boolean allowsValue(String str, ValidationContext vc) {
+  boolean allowsValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
     return true;
   }
 
   /* Requires lexicallyAllows to be true. Returns null if value does not satisfy
      constraints on value space. */
-  abstract Object getValue(String str, ValidationContext vc);
+  abstract Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc);
   
   OrderRelation getOrderRelation() {
     return null;
@@ -165,7 +162,7 @@ abstract class DatatypeBase implements Datatype2 {
     return value1.equals(value2);
   }
 
-  public DatatypeStreamingValidator createStreamingValidator(ValidationContext vc) {
+  public com.googlecode.relaxng4j.datatype.DatatypeStreamingValidator createStreamingValidator(com.googlecode.relaxng4j.datatype.ValidationContext vc) {
     return new StreamingValidatorImpl(this, vc);
   }
 }

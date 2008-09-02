@@ -1,7 +1,5 @@
 package com.thaiopensource.datatype.xsd;
 
-import org.relaxng.datatype.ValidationContext;
-
 class Base64BinaryDatatype extends BinaryDatatype {
   static private final byte[] weightTable = makeWeightTable();
   static private final byte INVALID = (byte)-1;
@@ -58,7 +56,7 @@ class Base64BinaryDatatype extends BinaryDatatype {
     return ((nChars + nPadding) >> 2)*3 - nPadding;
   }
 
-  Object getValue(String str, ValidationContext vc) {
+  Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
     int nBytes = byteCount(str);
     byte[] value = new byte[nBytes];
     int valueIndex = 0;

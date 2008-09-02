@@ -12,8 +12,8 @@ public class SchemaReceiverLoader implements SchemaReceiverFactory {
   private final Service service = new Service(SchemaReceiverFactory.class);
   public SchemaReceiver createSchemaReceiver(String namespaceUri,
                                              PropertyMap properties) {
-    for (Enumeration enum = service.getProviders(); enum.hasMoreElements();) {
-      SchemaReceiverFactory srf = (SchemaReceiverFactory)enum.nextElement();
+    for (Enumeration enumeration = service.getProviders(); enumeration.hasMoreElements();) {
+      SchemaReceiverFactory srf = (SchemaReceiverFactory)enumeration.nextElement();
       SchemaReceiver sr = srf.createSchemaReceiver(namespaceUri, properties);
       if (sr != null)
         return sr;
@@ -22,8 +22,8 @@ public class SchemaReceiverLoader implements SchemaReceiverFactory {
   }
 
   public Option getOption(String uri) {
-    for (Enumeration enum = service.getProviders(); enum.hasMoreElements();) {
-      SchemaReceiverFactory srf = (SchemaReceiverFactory)enum.nextElement();
+    for (Enumeration enumeration = service.getProviders(); enumeration.hasMoreElements();) {
+      SchemaReceiverFactory srf = (SchemaReceiverFactory)enumeration.nextElement();
       Option option = srf.getOption(uri);
       if (option != null)
         return option;

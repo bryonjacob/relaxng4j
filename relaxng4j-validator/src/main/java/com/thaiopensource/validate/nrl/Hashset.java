@@ -15,8 +15,8 @@ class Hashset {
   }
 
   void addAll(Hashset set) {
-    for (Enumeration enum = set.table.keys(); enum.hasMoreElements();)
-      add(enum.nextElement());
+    for (Enumeration enumeration = set.table.keys(); enumeration.hasMoreElements();)
+      add(enumeration.nextElement());
   }
 
   void clear() {

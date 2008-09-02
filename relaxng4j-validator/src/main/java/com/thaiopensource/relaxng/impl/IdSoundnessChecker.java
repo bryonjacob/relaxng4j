@@ -3,7 +3,7 @@ package com.thaiopensource.relaxng.impl;
 import com.thaiopensource.validate.Validator;
 import com.thaiopensource.xml.util.StringSplitter;
 import com.thaiopensource.xml.util.Name;
-import org.relaxng.datatype.Datatype;
+import com.googlecode.relaxng4j.datatype.Datatype;
 import org.xml.sax.Attributes;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.Locator;
@@ -93,7 +93,7 @@ public class IdSoundnessChecker implements Validator, ContentHandler {
           else
             error("id_multiple_tokens");
           break;
-        case Datatype.ID_TYPE_IDREF:
+        case com.googlecode.relaxng4j.datatype.Datatype.ID_TYPE_IDREF:
           if (tokens.length == 1)
             idref(tokens[0]);
           else if (tokens.length == 0)

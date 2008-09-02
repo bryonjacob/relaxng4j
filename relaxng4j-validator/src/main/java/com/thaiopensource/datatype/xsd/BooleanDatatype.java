@@ -1,6 +1,6 @@
 package com.thaiopensource.datatype.xsd;
 
-import org.relaxng.datatype.ValidationContext;
+import com.googlecode.relaxng4j.datatype.ValidationContext;
 
 class BooleanDatatype extends DatatypeBase {
   boolean lexicallyAllows(String str) {

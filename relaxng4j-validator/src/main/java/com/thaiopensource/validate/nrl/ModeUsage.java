@@ -49,10 +49,10 @@ class ModeUsage {
     if (attributeProcessing == -1) {
       attributeProcessing = resolve(mode).getAttributeProcessing();
       if (modeMap != null) {
-        for (Enumeration enum = modeMap.values();
-             enum.hasMoreElements()
+        for (Enumeration enumeration = modeMap.values();
+             enumeration.hasMoreElements()
              && attributeProcessing != Mode.ATTRIBUTE_PROCESSING_FULL;)
-          attributeProcessing = Math.max(resolve((Mode)enum.nextElement()).getAttributeProcessing(),
+          attributeProcessing = Math.max(resolve((Mode)enumeration.nextElement()).getAttributeProcessing(),
                                          attributeProcessing);
       }
     }

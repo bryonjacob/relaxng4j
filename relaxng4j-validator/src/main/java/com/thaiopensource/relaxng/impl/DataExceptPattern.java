@@ -1,13 +1,12 @@
 package com.thaiopensource.relaxng.impl;
 
-import org.relaxng.datatype.Datatype;
 import org.xml.sax.Locator;
 
 class DataExceptPattern extends DataPattern {
   private final Pattern except;
   private final Locator loc;
 
-  DataExceptPattern(Datatype dt, Pattern except, Locator loc) {
+  DataExceptPattern(com.googlecode.relaxng4j.datatype.Datatype dt, Pattern except, Locator loc) {
     super(dt);
     this.except = except;
     this.loc = loc;

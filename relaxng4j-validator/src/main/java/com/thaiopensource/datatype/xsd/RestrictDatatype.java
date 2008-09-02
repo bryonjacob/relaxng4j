@@ -1,7 +1,5 @@
 package com.thaiopensource.datatype.xsd;
 
-import org.relaxng.datatype.ValidationContext;
-
 class RestrictDatatype extends DatatypeBase {
   protected final DatatypeBase base;
   
@@ -18,7 +16,7 @@ class RestrictDatatype extends DatatypeBase {
     return base.lexicallyAllows(str);
   }
 
-  boolean allowsValue(String str, ValidationContext vc) {
+  boolean allowsValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
     return base.allowsValue(str, vc);
   }
 
@@ -30,7 +28,7 @@ class RestrictDatatype extends DatatypeBase {
     return base.getMeasure();
   }
 
-  Object getValue(String str, ValidationContext vc) {
+  Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
     return base.getValue(str, vc);
   }
 

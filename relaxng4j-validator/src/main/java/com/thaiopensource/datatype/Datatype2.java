@@ -1,7 +1,5 @@
 package com.thaiopensource.datatype;
 
-import org.relaxng.datatype.Datatype;
-
-public interface Datatype2 extends Datatype {
+public interface Datatype2 extends com.googlecode.relaxng4j.datatype.Datatype {
   boolean alwaysValid();
 }

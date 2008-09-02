@@ -1,12 +1,10 @@
 package com.thaiopensource.relaxng.impl;
 
-import org.relaxng.datatype.Datatype;
-
 class ValuePattern extends StringPattern {
   private final Object obj;
-  private final Datatype dt;
+  private final com.googlecode.relaxng4j.datatype.Datatype dt;
 
-  ValuePattern(Datatype dt, Object obj) {
+  ValuePattern(com.googlecode.relaxng4j.datatype.Datatype dt, Object obj) {
     super(combineHashCode(VALUE_HASH_CODE, obj.hashCode()));
     this.dt = dt;
     this.obj = obj;
@@ -37,7 +35,7 @@ class ValuePattern extends StringPattern {
     }
   }
 
-  Datatype getDatatype() {
+  com.googlecode.relaxng4j.datatype.Datatype getDatatype() {
     return dt;
   }
 

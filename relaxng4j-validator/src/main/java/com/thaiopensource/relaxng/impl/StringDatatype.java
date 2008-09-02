@@ -1,17 +1,16 @@
 package com.thaiopensource.relaxng.impl;
 
 import com.thaiopensource.datatype.Datatype2;
-import org.relaxng.datatype.DatatypeException;
-import org.relaxng.datatype.DatatypeStreamingValidator;
-import org.relaxng.datatype.ValidationContext;
-import org.relaxng.datatype.helpers.StreamingValidatorImpl;
+import com.googlecode.relaxng4j.datatype.DatatypeException;
+import com.googlecode.relaxng4j.datatype.DatatypeStreamingValidator;
+import com.googlecode.relaxng4j.datatype.ValidationContext;
 
 class StringDatatype implements Datatype2 {
   public boolean isValid(String str, ValidationContext vc) {
     return true;
   }
 
-  public void checkValid(String str, ValidationContext vc) throws DatatypeException {
+  public void checkValid(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) throws DatatypeException {
     if (!isValid(str, vc))
       throw new DatatypeException();
   }
@@ -41,6 +40,6 @@ class StringDatatype implements Datatype2 {
   }
 
   public DatatypeStreamingValidator createStreamingValidator(ValidationContext vc) {
-    return new StreamingValidatorImpl(this, vc);
+    return new com.googlecode.relaxng4j.datatype.helpers.StreamingValidatorImpl(this, vc);
   }
 }
