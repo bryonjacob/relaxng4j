@@ -10,6 +10,32 @@
     <name>relaxng4j-validator</name>
     <description>RelaxNG validator for Java</description>
 
+    <developers>
+        <developer>
+            <id>bryon</id>
+            <name>Bryon Jacob</name>
+            <email>bryon@jacob.net</email>
+            <timezone>-6</timezone>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>New BSD License</name>
+            <url>COPYING</url>
+        </license>
+    </licenses>
+
+
+    <issueManagement>
+        <system>GoogleCode Issues</system>
+        <url>http://code.google.com/p/relaxng4j/issues</url>
+    </issueManagement>
+
+
     <repositories>
         <repository>
             <id>maven2-repository.dev.java.net</id>
