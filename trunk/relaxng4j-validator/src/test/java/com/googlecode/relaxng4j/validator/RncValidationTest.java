@@ -1,7 +1,7 @@
 /* Copyright Homeaway, Inc 2005-2007. All Rights Reserved.
 * No unauthorized use of this software.
 */
-package com.homeaway.jing;
+package com.googlecode.relaxng4j.validator;
 
 import com.thaiopensource.util.SinglePropertyMap;
 import com.thaiopensource.validate.ValidateProperty;
@@ -37,10 +37,10 @@ public class RncValidationTest extends TestCase {
                                      CompactSchemaReader.getInstance());
 
         validationDriver.loadSchema(new InputSource(
-                getClass().getClassLoader().getResourceAsStream("com/homeaway/jing/" + type + ".rnc")));
+                getClass().getClassLoader().getResourceAsStream("com/googlecode/relaxng4j/validator/" + type + ".rnc")));
 
         File[] files = new File(getClass().getClassLoader().getResource(
-                "com/homeaway/jing/" + type).toURI()).listFiles();
+                "com/googlecode/relaxng4j/validator/" + type).toURI()).listFiles();
 
         for (int i = 0; i < files.length; i++) {
             log.info("validating " + files[i].getName());
