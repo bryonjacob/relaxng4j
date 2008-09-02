@@ -1,4 +1,4 @@
-package com.googlecode.relaxng4j.datatype;
+package com.relaxng4j.datatype;
 
 /**
  * Signals Datatype related exceptions.

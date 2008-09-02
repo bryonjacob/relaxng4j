@@ -1,6 +1,6 @@
 package com.thaiopensource.relaxng.impl;
 
-import com.googlecode.relaxng4j.datatype.Datatype;
+import com.relaxng4j.datatype.Datatype;
 
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -233,7 +233,7 @@ public class PatternDumper {
       endElement();
     }
 
-    public void visitDataExcept(com.googlecode.relaxng4j.datatype.Datatype dt, Pattern except) {
+    public void visitDataExcept(com.relaxng4j.datatype.Datatype dt, Pattern except) {
       startElement("text");	// XXX
       endElement();
     }

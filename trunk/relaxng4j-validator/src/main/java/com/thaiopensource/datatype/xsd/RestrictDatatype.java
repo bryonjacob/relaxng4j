@@ -16,7 +16,7 @@ class RestrictDatatype extends DatatypeBase {
     return base.lexicallyAllows(str);
   }
 
-  boolean allowsValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
+  boolean allowsValue(String str, com.relaxng4j.datatype.ValidationContext vc) {
     return base.allowsValue(str, vc);
   }
 
@@ -28,7 +28,7 @@ class RestrictDatatype extends DatatypeBase {
     return base.getMeasure();
   }
 
-  Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
+  Object getValue(String str, com.relaxng4j.datatype.ValidationContext vc) {
     return base.getValue(str, vc);
   }
 

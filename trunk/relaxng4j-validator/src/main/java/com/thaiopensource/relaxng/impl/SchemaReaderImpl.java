@@ -12,7 +12,7 @@ import com.thaiopensource.validate.ValidateProperty;
 import com.thaiopensource.validate.nrl.NrlProperty;
 import com.thaiopensource.validate.rng.RngProperty;
 import com.thaiopensource.xml.sax.XMLReaderCreator;
-import com.googlecode.relaxng4j.datatype.helpers.DatatypeLibraryLoader;
+import com.relaxng4j.datatype.helpers.DatatypeLibraryLoader;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -34,7 +34,7 @@ public abstract class SchemaReaderImpl implements SchemaReader {
     SchemaPatternBuilder spb = new SchemaPatternBuilder();
     XMLReaderCreator xrc = ValidateProperty.XML_READER_CREATOR.get(properties);
     ErrorHandler eh = ValidateProperty.ERROR_HANDLER.get(properties);
-    com.googlecode.relaxng4j.datatype.DatatypeLibraryFactory dlf = RngProperty.DATATYPE_LIBRARY_FACTORY.get(properties);
+    com.relaxng4j.datatype.DatatypeLibraryFactory dlf = RngProperty.DATATYPE_LIBRARY_FACTORY.get(properties);
     if (dlf == null)
       dlf = new DatatypeLibraryLoader();
     Pattern start = SchemaBuilderImpl.parse(createParseable(xrc, in, eh), eh, dlf, spb,

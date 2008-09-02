@@ -1,12 +1,12 @@
 package com.thaiopensource.relaxng.impl;
 
 import com.thaiopensource.datatype.Datatype2;
-import com.googlecode.relaxng4j.datatype.Datatype;
+import com.relaxng4j.datatype.Datatype;
 
 class DataPattern extends StringPattern {
   private final Datatype dt;
 
-  DataPattern(com.googlecode.relaxng4j.datatype.Datatype dt) {
+  DataPattern(com.relaxng4j.datatype.Datatype dt) {
     super(combineHashCode(DATA_HASH_CODE, dt.hashCode()));
     this.dt = dt;
   }

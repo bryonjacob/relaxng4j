@@ -56,7 +56,7 @@ class Base64BinaryDatatype extends BinaryDatatype {
     return ((nChars + nPadding) >> 2)*3 - nPadding;
   }
 
-  Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
+  Object getValue(String str, com.relaxng4j.datatype.ValidationContext vc) {
     int nBytes = byteCount(str);
     byte[] value = new byte[nBytes];
     int valueIndex = 0;

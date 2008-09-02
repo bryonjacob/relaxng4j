@@ -1,8 +1,8 @@
 package com.thaiopensource.datatype.xsd;
 
-import com.googlecode.relaxng4j.datatype.DatatypeBuilder;
-import com.googlecode.relaxng4j.datatype.ValidationContext;
-import com.googlecode.relaxng4j.datatype.DatatypeException;
+import com.relaxng4j.datatype.DatatypeBuilder;
+import com.relaxng4j.datatype.ValidationContext;
+import com.relaxng4j.datatype.DatatypeException;
 import com.thaiopensource.datatype.xsd.regex.RegexSyntaxException;
 import com.thaiopensource.util.Localizer;
 
@@ -19,7 +19,7 @@ class DatatypeBuilderImpl implements DatatypeBuilder {
 
   public void addParameter(String name,
 			   String value,
-			   com.googlecode.relaxng4j.datatype.ValidationContext context) throws com.googlecode.relaxng4j.datatype.DatatypeException {
+			   com.relaxng4j.datatype.ValidationContext context) throws com.relaxng4j.datatype.DatatypeException {
     if (name.equals("pattern"))
       addPatternParam(value);
     else if (name.equals("minInclusive"))
@@ -48,7 +48,7 @@ class DatatypeBuilderImpl implements DatatypeBuilder {
       error("unrecognized_param", name);
   }
 
-  private void addPatternParam(String value) throws com.googlecode.relaxng4j.datatype.DatatypeException {
+  private void addPatternParam(String value) throws com.relaxng4j.datatype.DatatypeException {
     try {
       base = new PatternRestrictDatatype(base,
 					 library.getRegexEngine().compile(value));
@@ -67,19 +67,19 @@ class DatatypeBuilderImpl implements DatatypeBuilder {
 					    getLimit(value, context));
   }
 
-  private void addMaxInclusiveParam(String value, com.googlecode.relaxng4j.datatype.ValidationContext context)
+  private void addMaxInclusiveParam(String value, com.relaxng4j.datatype.ValidationContext context)
     throws DatatypeException {
     base = new MaxInclusiveRestrictDatatype(base,
 					    getLimit(value, context));
   }
 
-  private void addMinExclusiveParam(String value, com.googlecode.relaxng4j.datatype.ValidationContext context)
-    throws com.googlecode.relaxng4j.datatype.DatatypeException {
+  private void addMinExclusiveParam(String value, com.relaxng4j.datatype.ValidationContext context)
+    throws com.relaxng4j.datatype.DatatypeException {
     base = new MinExclusiveRestrictDatatype(base,
 					    getLimit(value, context));
   }
 
-  private void addMaxExclusiveParam(String value, com.googlecode.relaxng4j.datatype.ValidationContext context)
+  private void addMaxExclusiveParam(String value, com.relaxng4j.datatype.ValidationContext context)
     throws DatatypeException {
     base = new MaxExclusiveRestrictDatatype(base,
 					    getLimit(value, context));
@@ -134,11 +134,11 @@ class DatatypeBuilderImpl implements DatatypeBuilder {
     base = new PrecisionRestrictDatatype(base, scale);
   }
 
-  public com.googlecode.relaxng4j.datatype.Datatype createDatatype() {
+  public com.relaxng4j.datatype.Datatype createDatatype() {
     return base;
   }
 
-  private static void error(String key) throws com.googlecode.relaxng4j.datatype.DatatypeException {
+  private static void error(String key) throws com.relaxng4j.datatype.DatatypeException {
     throw new DatatypeException(localizer.message(key));
   }
 
@@ -147,7 +147,7 @@ class DatatypeBuilderImpl implements DatatypeBuilder {
   }
 
   private static void error(String key, String arg, int pos) throws DatatypeException {
-    throw new com.googlecode.relaxng4j.datatype.DatatypeException(pos, localizer.message(key, arg));
+    throw new com.relaxng4j.datatype.DatatypeException(pos, localizer.message(key, arg));
   }
 
   // Return -1 for anything that is not a nonNegativeInteger

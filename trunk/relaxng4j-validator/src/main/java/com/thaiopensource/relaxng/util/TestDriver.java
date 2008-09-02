@@ -32,7 +32,7 @@ class TestDriver {
     PropertyMapBuilder properties = new PropertyMapBuilder();
     // This is an optimization.  It ensures that all SchemaReaders share a
     // single DatatypeLibraryLoader.
-    RngProperty.DATATYPE_LIBRARY_FACTORY.put(properties, new com.googlecode.relaxng4j.datatype.helpers.DatatypeLibraryLoader());
+    RngProperty.DATATYPE_LIBRARY_FACTORY.put(properties, new com.relaxng4j.datatype.helpers.DatatypeLibraryLoader());
     try {
       while (op.moveToNextOption()) {
         switch (op.getOptionChar()) {

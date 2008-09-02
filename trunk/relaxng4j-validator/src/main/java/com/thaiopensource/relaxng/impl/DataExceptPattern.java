@@ -6,7 +6,7 @@ class DataExceptPattern extends DataPattern {
   private final Pattern except;
   private final Locator loc;
 
-  DataExceptPattern(com.googlecode.relaxng4j.datatype.Datatype dt, Pattern except, Locator loc) {
+  DataExceptPattern(com.relaxng4j.datatype.Datatype dt, Pattern except, Locator loc) {
     super(dt);
     this.except = except;
     this.loc = loc;

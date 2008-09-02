@@ -5,7 +5,7 @@ import org.xml.sax.SAXException;
 
 import java.util.Hashtable;
 
-public abstract class DtdContext implements DTDHandler, com.googlecode.relaxng4j.datatype.ValidationContext {
+public abstract class DtdContext implements DTDHandler, com.relaxng4j.datatype.ValidationContext {
   private final Hashtable notationTable;
   private final Hashtable unparsedEntityTable;
 

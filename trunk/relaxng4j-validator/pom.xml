@@ -3,7 +3,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.googlecode.relaxng4j</groupId>
+    <groupId>com.relaxng4j</groupId>
     <artifactId>relaxng4j-validator</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>

@@ -1,14 +1,14 @@
 package com.thaiopensource.relaxng.impl;
 
-import com.googlecode.relaxng4j.datatype.Datatype;
-import com.googlecode.relaxng4j.datatype.ValidationContext;
+import com.relaxng4j.datatype.Datatype;
+import com.relaxng4j.datatype.ValidationContext;
 
 class DataDataDerivType extends DataDerivType {
   private final Datatype dt;
   private PatternMemo validMemo;
   private PatternMemo invalidMemo;
 
-  DataDataDerivType(com.googlecode.relaxng4j.datatype.Datatype dt) {
+  DataDataDerivType(com.relaxng4j.datatype.Datatype dt) {
     this.dt = dt;
   }
 
