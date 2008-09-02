@@ -1,0 +1,3 @@
+<!-- unknown element "widget" -->
+<widget id="w"/>
+<!-- NOTE: this is invalid because the element is in the default namespace -->        
