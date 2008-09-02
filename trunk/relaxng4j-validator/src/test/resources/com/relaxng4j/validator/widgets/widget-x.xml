@@ -1,4 +1,4 @@
-<!-- unknown element "foo" from namespace "http://jing.homeaway.com/tests/widgets" -->
-<widget xmlns="http://jing.homeaway.com/tests/widgets" id="x">
+<!-- unknown element "foo" from namespace "http://relaxng4j.com/tests/widgets" -->
+<widget xmlns="http://relaxng4j.com/tests/widgets" id="x">
     <foo>bar</foo>
 </widget>
