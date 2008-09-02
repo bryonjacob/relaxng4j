@@ -1,4 +1,4 @@
-namespace w = "http://jing.homeaway.com/tests/widgets"
+namespace w = "http://relaxng4j.com/tests/widgets"
 
 grammar {
 start = WIDGET
