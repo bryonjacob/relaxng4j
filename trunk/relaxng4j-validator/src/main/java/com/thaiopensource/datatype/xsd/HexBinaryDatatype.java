@@ -1,7 +1,5 @@
 package com.thaiopensource.datatype.xsd;
 
-import org.relaxng.datatype.ValidationContext;
-
 class HexBinaryDatatype extends BinaryDatatype {
   static private final int INVALID = -1;
   static private final int WHITESPACE = -2;
@@ -18,7 +16,7 @@ class HexBinaryDatatype extends BinaryDatatype {
     return i == len;
   }
 
-  Object getValue(String str, ValidationContext vc) {
+  Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
     int len = str.length();
     int start = 0;
     while (start < len && weight(str.charAt(start)) == WHITESPACE)

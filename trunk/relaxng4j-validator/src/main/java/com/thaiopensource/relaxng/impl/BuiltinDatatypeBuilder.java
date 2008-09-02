@@ -1,24 +1,22 @@
 package com.thaiopensource.relaxng.impl;
 
-import org.relaxng.datatype.Datatype;
-import org.relaxng.datatype.DatatypeBuilder;
-import org.relaxng.datatype.DatatypeException;
-import org.relaxng.datatype.ValidationContext;
+import com.googlecode.relaxng4j.datatype.DatatypeBuilder;
+import com.googlecode.relaxng4j.datatype.DatatypeException;
 
 class BuiltinDatatypeBuilder implements DatatypeBuilder {
-  private final Datatype dt;
+  private final com.googlecode.relaxng4j.datatype.Datatype dt;
 
-  BuiltinDatatypeBuilder(Datatype dt) {
+  BuiltinDatatypeBuilder(com.googlecode.relaxng4j.datatype.Datatype dt) {
     this.dt = dt;
   }
 
   public void addParameter(String name,
 			   String value,
-			   ValidationContext context) throws DatatypeException {
-    throw new DatatypeException(SchemaBuilderImpl.localizer.message("builtin_param"));
+			   com.googlecode.relaxng4j.datatype.ValidationContext context) throws DatatypeException {
+    throw new com.googlecode.relaxng4j.datatype.DatatypeException(SchemaBuilderImpl.localizer.message("builtin_param"));
   }
 
-  public Datatype createDatatype() {
+  public com.googlecode.relaxng4j.datatype.Datatype createDatatype() {
     return dt;
   }
 }

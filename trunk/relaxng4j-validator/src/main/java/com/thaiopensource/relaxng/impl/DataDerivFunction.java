@@ -1,7 +1,7 @@
 package com.thaiopensource.relaxng.impl;
 
-import org.relaxng.datatype.Datatype;
-import org.relaxng.datatype.ValidationContext;
+import com.googlecode.relaxng4j.datatype.Datatype;
+import com.googlecode.relaxng4j.datatype.ValidationContext;
 
 class DataDerivFunction extends AbstractPatternFunction {
   private final ValidatorPatternBuilder builder;

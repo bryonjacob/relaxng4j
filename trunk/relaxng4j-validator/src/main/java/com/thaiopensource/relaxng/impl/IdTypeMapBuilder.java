@@ -1,6 +1,6 @@
 package com.thaiopensource.relaxng.impl;
 
-import org.relaxng.datatype.Datatype;
+import com.googlecode.relaxng4j.datatype.Datatype;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
@@ -69,7 +69,7 @@ public class IdTypeMapBuilder {
     public int getIdType(Name elementName, Name attributeName) {
       Integer n = (Integer)table.get(new ScopedName(elementName, attributeName));
       if (n == null)
-        return Datatype.ID_TYPE_NULL;
+        return com.googlecode.relaxng4j.datatype.Datatype.ID_TYPE_NULL;
       return n.intValue();
     }
     private void add(Name elementName, Name attributeName, int idType) {
@@ -170,8 +170,8 @@ public class IdTypeMapBuilder {
       return null;
     }
 
-    private void datatype(Datatype dt) {
-      if (dt.getIdType() != Datatype.ID_TYPE_NULL && !attributeIsParent)
+    private void datatype(com.googlecode.relaxng4j.datatype.Datatype dt) {
+      if (dt.getIdType() != com.googlecode.relaxng4j.datatype.Datatype.ID_TYPE_NULL && !attributeIsParent)
         error("id_parent", locator);
     }
 
@@ -287,7 +287,7 @@ public class IdTypeMapBuilder {
           Name attributeName = ((SimpleNameClass)pc.attributeNameClass).getName();
           int idType = idTypeMap.getIdType(elementName,
                                            attributeName);
-          if (idType != Datatype.ID_TYPE_NULL)
+          if (idType != com.googlecode.relaxng4j.datatype.Datatype.ID_TYPE_NULL)
             error("id_type_conflict", elementName, attributeName, pc.locator);
         }
         else {

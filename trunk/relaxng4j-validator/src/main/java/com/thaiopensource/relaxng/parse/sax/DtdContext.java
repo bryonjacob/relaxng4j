@@ -2,11 +2,10 @@ package com.thaiopensource.relaxng.parse.sax;
 
 import org.xml.sax.DTDHandler;
 import org.xml.sax.SAXException;
-import org.relaxng.datatype.ValidationContext;
 
 import java.util.Hashtable;
 
-public abstract class DtdContext implements DTDHandler, ValidationContext {
+public abstract class DtdContext implements DTDHandler, com.googlecode.relaxng4j.datatype.ValidationContext {
   private final Hashtable notationTable;
   private final Hashtable unparsedEntityTable;
 

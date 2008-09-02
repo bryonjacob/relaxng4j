@@ -10,8 +10,6 @@ import com.thaiopensource.xml.sax.DraconianErrorHandler;
 import com.thaiopensource.xml.sax.Jaxp11XMLReaderCreator;
 import org.iso_relax.verifier.Schema;
 import org.iso_relax.verifier.VerifierFactory;
-import org.relaxng.datatype.DatatypeLibraryFactory;
-import org.relaxng.datatype.helpers.DatatypeLibraryLoader;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -20,7 +18,7 @@ import java.io.IOException;
 
 public class VerifierFactoryImpl extends VerifierFactory {
   private final XMLReaderCreator xrc = new Jaxp11XMLReaderCreator();
-  private final DatatypeLibraryFactory dlf = new DatatypeLibraryLoader();
+  private final com.googlecode.relaxng4j.datatype.DatatypeLibraryFactory dlf = new com.googlecode.relaxng4j.datatype.helpers.DatatypeLibraryLoader();
   private final ErrorHandler eh = new DraconianErrorHandler();
 
   public VerifierFactoryImpl() { }

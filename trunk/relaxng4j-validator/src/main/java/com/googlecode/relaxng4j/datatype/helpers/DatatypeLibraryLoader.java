@@ -31,10 +31,10 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.relaxng.datatype.helpers;
+package com.googlecode.relaxng4j.datatype.helpers;
 
-import org.relaxng.datatype.DatatypeLibraryFactory;
-import org.relaxng.datatype.DatatypeLibrary;
+import com.googlecode.relaxng4j.datatype.DatatypeLibraryFactory;
+import com.googlecode.relaxng4j.datatype.DatatypeLibrary;
 import java.util.Enumeration;
 import java.util.NoSuchElementException;
 import java.util.Vector;
@@ -56,7 +56,7 @@ import java.net.URL;
 public class DatatypeLibraryLoader implements DatatypeLibraryFactory {
   private final Service service = new Service(DatatypeLibraryFactory.class);
 
-  public DatatypeLibrary createDatatypeLibrary(String uri) {
+  public com.googlecode.relaxng4j.datatype.DatatypeLibrary createDatatypeLibrary(String uri) {
     for (Enumeration e = service.getProviders();
 	 e.hasMoreElements();) {
       DatatypeLibraryFactory factory

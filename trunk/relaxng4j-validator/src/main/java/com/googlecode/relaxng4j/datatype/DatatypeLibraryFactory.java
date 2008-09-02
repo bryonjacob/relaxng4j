@@ -1,4 +1,4 @@
-package org.relaxng.datatype;
+package com.googlecode.relaxng4j.datatype;
 
 /**
  * Factory class for the DatatypeLibrary class.

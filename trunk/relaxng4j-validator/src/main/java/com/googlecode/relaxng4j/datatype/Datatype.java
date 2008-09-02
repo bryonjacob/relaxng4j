@@ -1,4 +1,4 @@
-package org.relaxng.datatype;
+package com.googlecode.relaxng4j.datatype;
 
 /**
  * Datatype object.
@@ -40,7 +40,7 @@ public interface Datatype {
 	 *		true if the 'literal' is a member of this Datatype;
 	 *		false if it's not a member of this Datatype.
 	 */
-	boolean isValid( String literal, ValidationContext context );
+	boolean isValid( String literal, com.googlecode.relaxng4j.datatype.ValidationContext context );
 	
 	/**
 	 * Similar to the isValid method but throws an exception with diagnosis
@@ -57,13 +57,13 @@ public interface Datatype {
 	 * to users. This method is kept separate from the isValid method to
 	 * achieve higher performance during normal validation.
 	 * 
-	 * @exception DatatypeException
+	 * @exception com.googlecode.relaxng4j.datatype.DatatypeException
 	 *		If the given literal is invalid, then this exception is thrown.
 	 *		If the callee supports error diagnosis, then the exception should
 	 *		contain a diagnosis message.
 	 */
-	void checkValid( String literal, ValidationContext context )
-		throws DatatypeException;
+	void checkValid( String literal, com.googlecode.relaxng4j.datatype.ValidationContext context )
+		throws com.googlecode.relaxng4j.datatype.DatatypeException;
 	
 	/**
 	 * Creates an instance of a streaming validator for this type.
@@ -81,7 +81,7 @@ public interface Datatype {
 	 *		The callee may keep a reference to this context object
 	 *		only while the returned streaming validator is being used.
 	 */
-	DatatypeStreamingValidator createStreamingValidator( ValidationContext context );
+	com.googlecode.relaxng4j.datatype.DatatypeStreamingValidator createStreamingValidator( com.googlecode.relaxng4j.datatype.ValidationContext context );
 	
 	/**
 	 * Converts lexcial value and the current context to the corresponding
@@ -115,7 +115,7 @@ public interface Datatype {
 	 *		when the given lexical value is not a valid lexical
 	 *		value for this type.
 	 */
-	Object createValue( String literal, ValidationContext context );
+	Object createValue( String literal, com.googlecode.relaxng4j.datatype.ValidationContext context );
 	
 	/**
 	 * Tests the equality of two value objects which were originally

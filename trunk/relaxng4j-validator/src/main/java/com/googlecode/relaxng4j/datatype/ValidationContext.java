@@ -1,4 +1,4 @@
-package org.relaxng.datatype;
+package com.googlecode.relaxng4j.datatype;
 
 /**
  * An interface that must be implemented by caller to

@@ -1,4 +1,4 @@
-package org.relaxng.datatype;
+package com.googlecode.relaxng4j.datatype;
 
 /**
  * A Datatype library
@@ -20,7 +20,7 @@ public interface DatatypeLibrary {
 	 *		A non-null valid datatype object.
 	 */
 	DatatypeBuilder createDatatypeBuilder( String baseTypeLocalName )
-		throws DatatypeException;
+		throws com.googlecode.relaxng4j.datatype.DatatypeException;
 	
 	/**
 	 * Gets or creates a pre-defined type.
@@ -33,5 +33,5 @@ public interface DatatypeLibrary {
 	 * @return
 	 *		A non-null valid datatype object.
 	 */
-	Datatype createDatatype( String typeLocalName ) throws DatatypeException;
+	com.googlecode.relaxng4j.datatype.Datatype createDatatype( String typeLocalName ) throws com.googlecode.relaxng4j.datatype.DatatypeException;
 }

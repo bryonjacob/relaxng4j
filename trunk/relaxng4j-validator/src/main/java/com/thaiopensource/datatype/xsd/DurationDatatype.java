@@ -1,11 +1,8 @@
 package com.thaiopensource.datatype.xsd;
 
-import org.relaxng.datatype.ValidationContext;
-
 import java.math.BigInteger;
 import java.math.BigDecimal;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 class DurationDatatype extends RegexDatatype implements OrderRelation {
   static private final String PATTERN =
@@ -99,7 +96,7 @@ class DurationDatatype extends RegexDatatype implements OrderRelation {
     }
   }
 
-  Object getValue(String str, ValidationContext vc) {
+  Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
     int t = str.indexOf('T');
     if (t < 0)
       t = str.length();

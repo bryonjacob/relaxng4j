@@ -1,7 +1,7 @@
 package com.thaiopensource.relaxng.impl;
 
-import org.relaxng.datatype.Datatype;
-import org.relaxng.datatype.ValidationContext;
+import com.googlecode.relaxng4j.datatype.Datatype;
+import com.googlecode.relaxng4j.datatype.ValidationContext;
 
 import java.util.Hashtable;
 
@@ -10,7 +10,7 @@ class ValueDataDerivType extends DataDerivType {
   private PatternMemo noValue;
   private Hashtable valueTable;
 
-  ValueDataDerivType(Datatype dt) {
+  ValueDataDerivType(com.googlecode.relaxng4j.datatype.Datatype dt) {
     this.dt = dt;
   }
 
@@ -49,7 +49,7 @@ class ValueDataDerivType extends DataDerivType {
       return ddt.combine(this);
   }
 
-  Datatype getDatatype() {
+  com.googlecode.relaxng4j.datatype.Datatype getDatatype() {
     return dt;
   }
 }

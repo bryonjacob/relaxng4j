@@ -1,6 +1,6 @@
 package com.thaiopensource.datatype.xsd;
 
-import org.relaxng.datatype.ValidationContext;
+import com.googlecode.relaxng4j.datatype.ValidationContext;
 import com.thaiopensource.xml.util.StringSplitter;
 
 class ListDatatype extends DatatypeBase implements Measure {
@@ -29,7 +29,7 @@ class ListDatatype extends DatatypeBase implements Measure {
     return true;
   }
 
-  boolean allowsValue(String str, ValidationContext vc) {
+  boolean allowsValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
     String[] tokens = StringSplitter.split(str);
     for (int i = 0; i < tokens.length; i++)
       if (!itemType.allowsValue(tokens[i], vc))

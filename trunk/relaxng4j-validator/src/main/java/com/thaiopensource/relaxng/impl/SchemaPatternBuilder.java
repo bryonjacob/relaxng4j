@@ -1,6 +1,6 @@
 package com.thaiopensource.relaxng.impl;
 
-import org.relaxng.datatype.Datatype;
+import com.googlecode.relaxng4j.datatype.Datatype;
 import org.xml.sax.Locator;
 
 public class SchemaPatternBuilder extends PatternBuilder {
@@ -27,13 +27,13 @@ public class SchemaPatternBuilder extends PatternBuilder {
     return schemaInterner.intern(p);
   }
 
-  Pattern makeData(Datatype dt) {
+  Pattern makeData(com.googlecode.relaxng4j.datatype.Datatype dt) {
     noteDatatype(dt);
     Pattern p = new DataPattern(dt);
     return schemaInterner.intern(p);
   }
 
-  Pattern makeDataExcept(Datatype dt, Pattern except, Locator loc) {
+  Pattern makeDataExcept(com.googlecode.relaxng4j.datatype.Datatype dt, Pattern except, Locator loc) {
     noteDatatype(dt);
     Pattern p = new DataExceptPattern(dt, except, loc);
     return schemaInterner.intern(p);
@@ -83,7 +83,7 @@ public class SchemaPatternBuilder extends PatternBuilder {
     return makeInterleave(text, p);
   }
 
-  private void noteDatatype(Datatype dt) {
+  private void noteDatatype(com.googlecode.relaxng4j.datatype.Datatype dt) {
     if (dt.getIdType() != Datatype.ID_TYPE_NULL)
       idTypes = true;
   }

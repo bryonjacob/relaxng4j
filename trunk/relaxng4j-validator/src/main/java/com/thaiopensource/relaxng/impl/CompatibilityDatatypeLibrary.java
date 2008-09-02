@@ -1,10 +1,9 @@
 package com.thaiopensource.relaxng.impl;
 
-import org.relaxng.datatype.Datatype;
-import org.relaxng.datatype.DatatypeBuilder;
-import org.relaxng.datatype.DatatypeException;
-import org.relaxng.datatype.DatatypeLibrary;
-import org.relaxng.datatype.DatatypeLibraryFactory;
+import com.googlecode.relaxng4j.datatype.Datatype;
+import com.googlecode.relaxng4j.datatype.DatatypeBuilder;
+import com.googlecode.relaxng4j.datatype.DatatypeLibrary;
+import com.googlecode.relaxng4j.datatype.DatatypeLibraryFactory;
 import com.thaiopensource.xml.util.WellKnownNamespaces;
 
 class CompatibilityDatatypeLibrary implements DatatypeLibrary {
@@ -16,19 +15,19 @@ class CompatibilityDatatypeLibrary implements DatatypeLibrary {
   }
 
   public DatatypeBuilder createDatatypeBuilder(String type)
-          throws DatatypeException {
+          throws com.googlecode.relaxng4j.datatype.DatatypeException {
     if (type.equals("ID") || type.equals("IDREF") || type.equals("IDREFS")) {
       if (xsdDatatypeLibrary == null) {
         xsdDatatypeLibrary = factory.createDatatypeLibrary(WellKnownNamespaces.XML_SCHEMA_DATATYPES);
         if (xsdDatatypeLibrary == null)
-          throw new DatatypeException();
+          throw new com.googlecode.relaxng4j.datatype.DatatypeException();
       }
       return xsdDatatypeLibrary.createDatatypeBuilder(type);
     }
-    throw new DatatypeException();
+    throw new com.googlecode.relaxng4j.datatype.DatatypeException();
   }
 
-  public Datatype createDatatype(String type) throws DatatypeException {
+  public Datatype createDatatype(String type) throws com.googlecode.relaxng4j.datatype.DatatypeException {
     return createDatatypeBuilder(type).createDatatype();
   }
 }

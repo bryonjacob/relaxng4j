@@ -2,8 +2,6 @@ package com.thaiopensource.datatype.xsd;
 
 import java.math.BigDecimal;
 
-import org.relaxng.datatype.ValidationContext;
-
 class DecimalDatatype extends DatatypeBase implements OrderRelation {
 
   boolean lexicallyAllows(String str) {
@@ -48,7 +46,7 @@ class DecimalDatatype extends DatatypeBase implements OrderRelation {
     return true;
   }
 
-  Object getValue(String str, ValidationContext vc) {
+  Object getValue(String str, com.googlecode.relaxng4j.datatype.ValidationContext vc) {
     if (str.charAt(0) == '+')
       str = str.substring(1);	// JDK 1.1 doesn't handle leading +
     return new BigDecimal(str);

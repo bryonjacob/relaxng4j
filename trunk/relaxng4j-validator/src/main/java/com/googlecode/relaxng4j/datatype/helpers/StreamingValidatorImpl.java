@@ -1,9 +1,7 @@
-package org.relaxng.datatype.helpers;
-
-import org.relaxng.datatype.*;
+package com.googlecode.relaxng4j.datatype.helpers;
 
 /**
- * Dummy implementation of {@link DatatypeStreamingValidator}.
+ * Dummy implementation of {@link com.googlecode.relaxng4j.datatype.DatatypeStreamingValidator}.
  * 
  * <p>
  * This implementation can be used as a quick hack when the performance
@@ -24,16 +22,16 @@ import org.relaxng.datatype.*;
  * 
  * @author <a href="mailto:kohsuke.kawaguchi@sun.com">Kohsuke KAWAGUCHI</a>
  */
-public final class StreamingValidatorImpl implements DatatypeStreamingValidator {
+public final class StreamingValidatorImpl implements com.googlecode.relaxng4j.datatype.DatatypeStreamingValidator {
 	
 	/** This buffer accumulates characters. */
 	private final StringBuffer buffer = new StringBuffer();
 	
 	/** Datatype obejct that creates this streaming validator. */
-	private final Datatype baseType;
+	private final com.googlecode.relaxng4j.datatype.Datatype baseType;
 	
 	/** The current context. */
-	private final ValidationContext context;
+	private final com.googlecode.relaxng4j.datatype.ValidationContext context;
 	
 	public void addCharacters( char[] buf, int start, int len ) {
 		// append characters to the current buffer.
@@ -44,11 +42,11 @@ public final class StreamingValidatorImpl implements DatatypeStreamingValidator 
 		return baseType.isValid(buffer.toString(),context);
 	}
 	
-	public void checkValid() throws DatatypeException {
+	public void checkValid() throws com.googlecode.relaxng4j.datatype.DatatypeException {
 		baseType.checkValid(buffer.toString(),context);
 	}
 	
-	public StreamingValidatorImpl( Datatype baseType, ValidationContext context ) {
+	public StreamingValidatorImpl( com.googlecode.relaxng4j.datatype.Datatype baseType, com.googlecode.relaxng4j.datatype.ValidationContext context ) {
 		this.baseType = baseType;
 		this.context = context;
 	}
