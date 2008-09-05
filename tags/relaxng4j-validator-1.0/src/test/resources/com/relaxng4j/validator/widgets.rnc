@@ -1,0 +1,9 @@
+namespace w = "http://relaxng4j.com/tests/widgets"
+
+grammar {
+start = WIDGET
+
+WIDGET = element w:widget { WIDGET__TYPE }
+WIDGET__TYPE =
+    attribute id { text }
+}
