@@ -1,14 +1,10 @@
 package com.relaxng4j.validator;
 
-import com.thaiopensource.util.SinglePropertyMap;
-import com.thaiopensource.validate.ValidateProperty;
 import com.thaiopensource.validate.ValidationDriver;
-import com.thaiopensource.validate.rng.CompactSchemaReader;
+import com.thaiopensource.validate.ValidationDrivers;
 import junit.framework.TestCase;
-import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -28,13 +24,9 @@ public class RncValidationTest extends TestCase {
     }
 
     private void runValidationTest(String type) throws Exception {
-        ValidationDriver validationDriver;
-        validationDriver =
-                new ValidationDriver(ERROR_HANDLER_PROPERTY_MAP,
-                                     CompactSchemaReader.getInstance());
-
-        validationDriver.loadSchema(new InputSource(
-                getClass().getClassLoader().getResourceAsStream("com/relaxng4j/validator/" + type + ".rnc")));
+        ValidationDriver validationDriver = ValidationDrivers.newCompactSchemaDriver(
+                new InputSource(getClass().getClassLoader().getResourceAsStream(
+                        "com/relaxng4j/validator/" + type + ".rnc")));
 
         File[] files = new File(getClass().getClassLoader().getResource(
                 "com/relaxng4j/validator/" + type).toURI()).listFiles();
@@ -53,23 +45,5 @@ public class RncValidationTest extends TestCase {
             }
         }
     }
-
-    private static final SinglePropertyMap ERROR_HANDLER_PROPERTY_MAP =
-            new SinglePropertyMap(
-                    ValidateProperty.ERROR_HANDLER,
-                    new ErrorHandler() {
-
-                        public void warning(SAXParseException exception) throws SAXException {
-                            throw exception;
-                        }
-
-                        public void error(SAXParseException exception) throws SAXException {
-                            throw exception;
-                        }
-
-                        public void fatalError(SAXParseException exception) throws SAXException {
-                            throw exception;
-                        }
-                    });
 
 }
