@@ -4,7 +4,7 @@
 
     <groupId>com.relaxng4j</groupId>
     <artifactId>relaxng4j-validator</artifactId>
-    <version>1.1</version>
+    <version>1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>relaxng4j-validator</name>
     <description>RelaxNG validator for Java</description>
@@ -208,7 +208,7 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:svn:https://relaxng4j.googlecode.com/svn/tags/relaxng4j-validator-1.1</connection>
+        <connection>scm:svn:https://relaxng4j.googlecode.com/svn/trunk/relaxng-validator</connection>
     </scm>
 
 </project>
